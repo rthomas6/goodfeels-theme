@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "bulma": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.5.5"
+  },
+  "name": "goodfeels-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rthomas6/goodfeels-theme",
+  "author": "Ray",
+  "license": "MIT"
+}
