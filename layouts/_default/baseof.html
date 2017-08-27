@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+    <head>
+        <meta charset="utf-8">
+        {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+        <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
+        {{ .Hugo.Generator }}
+    </head>
+    <body>
+        {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+        {{ block "main" . }}{{ end }}
+        {{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+    </body>
+</html>
