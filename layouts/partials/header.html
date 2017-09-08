@@ -1,34 +1,43 @@
-<nav class="navbar is-primary">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="{{ .Site.BaseURL }}">
-            <h1 class="title">{{ .Site.Title }}</h1>
-        </a>
+<nav class="navbar is-transparent">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ .Site.BaseURL }}">
+                <h1 class="title">{{ .Site.Title }}</h1>
+            </a>
 
-        <div class="navbar-burger burger" data-target="navMenu-main">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div class="navbar-burger burger" data-target="navMenu-main">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </div>
 
-    <div id="navMenu-main" class="navbar-menu">
-        <div class="navbar-start">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-                {{ if .HasChildren }}
-            <div class="navbar-item has-dropdown is-hoverable{{if $currentPage.HasMenuCurrent "main" . }} is-active{{end}}">
-                    {{ range .Children }}
-                <a class="navbar-link{{if $currentPage.IsMenuCurrent "main" . }} is-active{{end}}" href="{{ .URL }}">
+        <div id="navMenu-main" class="navbar-menu">
+            <div class="navbar-start">
+            </div>
+            <div class="navbar-end">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    {{ if .HasChildren }}
+                <div class="navbar-item has-dropdown is-hoverable{{if $currentPage.HasMenuCurrent "main" . }} is-active{{end}}">
+                    <a class="navbar-link{{if $currentPage.HasMenuCurrent "main" . }} is-active{{end}}" href="{{ .URL }}">
+                        {{ .Name }}
+                    </a>
+                    <div class="navbar-dropdown ">
+                        {{ range .Children }}
+                        <a class="navbar-item{{if $currentPage.IsMenuCurrent "main" . }} is-active{{end}}" href="{{ .URL }}">
+                            {{ .Name }}
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                    {{ else}}
+                <a class="navbar-item {{if $currentPage.IsMenuCurrent "main" . }} is-active{{end}}" href="{{ .URL }}">
                     {{ .Name }}
                 </a>
                     {{ end }}
-            </div>
-                {{ else}}
-            <a class="navbar-link {{if $currentPage.IsMenuCurrent "main" . }} is-active{{end}}" href="{{ .URL }}">
-                {{ .Name }}
-            </a>
                 {{ end }}
-            {{ end }}
+            </div>
         </div>
     </div>
 </nav>

@@ -1,13 +1,18 @@
 {
-  "devDependencies": {
-    "bulma": "^0.5.1",
-    "sass-loader": "^6.0.6",
-    "webpack": "^3.5.5"
-  },
   "name": "goodfeels-theme",
   "version": "1.0.0",
+  "description": "My attempt at a Hugo theme",
   "main": "index.js",
   "repository": "https://github.com/rthomas6/goodfeels-theme",
-  "author": "Ray",
-  "license": "MIT"
+  "author": "Ray Thomas",
+  "license": "MIT",
+  "scripts": {
+    "bash": "bash",
+    "start": "node-sass --output-style compressed  goodfeels.sass ../static/css/main.css"
+  },
+  "devDependencies": {
+    "bulma": "^0.5.1",
+    "node-sass": "^4.5.3"
+  },
+  "dependencies": {}
 }

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
         <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
+        <link rel="stylesheet" href='{{ "css/main.css" | absURL }}'>
         {{ .Hugo.Generator }}
     </head>
     <body>

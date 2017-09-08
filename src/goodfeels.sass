@@ -1,0 +1,76 @@
+@import "node_modules/bulma/sass/utilities/initial-variables"
+@import "node_modules/bulma/sass/utilities/mixins"
+
+///////////////////////////////////////////////////////////////////////////////
+//Customize theme here
+///////////////////////////////////////////////////////////////////////////////
+
+//Nice reddish color
+$red: rgb(218, 68, 83)
+$primary: $red
+
+
+//Separate serif fonts for body text and sans-serif for headings
+$family-serif: "Georgia"
+$body-family: $family-serif
+h1,h2,h3,h4,h5,h6
+  font-family: $family-sans-serif
+
+//Figure captions are black even though they're headings
+figure
+  h4
+    color: $grey-dark !important
+
+
+//Pad content in article column
+=article_padding($padding)
+  article.column
+    .content
+      padding-left: $padding
+      padding-right: $padding
+      padding-bottom: $padding
+    .title                                                
+      padding-top: $padding
+      padding-left: $padding
+      padding-right: $padding
+    .subtitle
+      padding-left: $padding
+      padding-right: $padding
+
++mobile
+  +article_padding(0.5rem)
+
++tablet
+  +article_padding(1rem)
+
++desktop
+  +article_padding(2rem)
+
++widescreen
+  +article_padding(3rem)
+
++fullhd
+  +article_padding(3rem)
+
+$body-line-height: 1.7
+
+$content-heading-color: $primary
+$body-background-color: $white-ter
+
+//Dark navbar
+$navbar-background-color: $grey-darker
+$navbar-item-color: $white-ter
+$navbar-item-hover-color: $primary
+//$navbar-item-hover-background-color:
+$navbar-item-active-color: $white
+//$navbar-item-active-background-color:
+
+.navbar
+  .title
+    color: $white-ter
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+@import "node_modules/bulma/bulma"
