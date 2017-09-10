@@ -12,6 +12,7 @@ $primary: $red
 
 //Separate serif fonts for body text and sans-serif for headings
 $family-serif: "Georgia"
+$family-sans-serif: "Roboto", "Cantarell", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 $body-family: $family-serif
 h1,h2,h3,h4,h5,h6
   font-family: $family-sans-serif
@@ -20,7 +21,6 @@ h1,h2,h3,h4,h5,h6
 figure
   h4
     color: $grey-dark !important
-
 
 //Pad content in article column
 =article_padding($padding)
@@ -61,8 +61,12 @@ $body-background-color: $white-ter
 $navbar-background-color: $grey-darker
 $navbar-item-color: $white-ter
 $navbar-item-hover-color: $primary
-//$navbar-item-hover-background-color:
 $navbar-item-active-color: $white
+$navbar-item-hover-background-color: $black-ter
+$navbar-dropdown-background-color: $grey-dark
+$navbar-dropdown-border-top: 1px solid $primary
+$navbar-dropdown-item-hover-background-color: $black-ter
+$navbar-dropdown-item-hover-color: $white
 //$navbar-item-active-background-color:
 
 .navbar
