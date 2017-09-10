@@ -14,19 +14,15 @@
     </div>
 </section>
 <section class="section">
-    <div class="columns">
-    {{ range first 12 .Data.Pages }}
-        <div class="column is-6-tablet is-6-desktop is-4-widescreen is-4-fullhd">
-            <div class="box">
-                <h1 class="title">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </h1>
-                <div class="content is-small">
-                    {{ .Summary }}
-                </div>
-                <a class="button is-primary" href="{{ .RelPermalink }}">Read More</a>
-            </div>
-        </div>
+    <div class="columns is-multiline">
+    {{ if .IsHome }}
+        {{ range first 12 .Data.Pages }}
+            {{ partial "col-list-item" . }}
+        {{end}}
+    {{else}}
+        {{range .Data.Pages }}
+            {{ partial "col-list-item" . }}
+        {{end}}
     {{ end }}
     </div>
 </section>
