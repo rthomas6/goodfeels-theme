@@ -5,7 +5,7 @@
         {{ template "_internal/google_analytics_async.html" . }}
         {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
         <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
-        <link rel="stylesheet" href='{{ "css/main.css" | absURL }}'>
+        <link rel="stylesheet" href='{{ "/css/main.css" | relURL }}'>
         {{ .Hugo.Generator }}
     </head>
     <body>
