@@ -37,8 +37,13 @@ figure
       padding-left: $padding
       padding-right: $padding
 
+=article_margin($margin)
+  article.column
+    
 +mobile
   +article_padding(0.5rem)
+  .section
+    padding: 3rem 0rem !important
 
 +tablet
   +article_padding(1rem)
