@@ -1,14 +1,14 @@
 {{ define "main" }}
 <section class="section">
         <div class="columns is-desktop is-centered is-gapless">
-            <article class="column is-7-fullhd is-8-widescreen is-9-desktop box">
+            <article class="column box">
                 <h1 class="title">
                     {{ .Title }}
                 </h1>
                 <h3 class="subtitle">
                     {{ .Description }}
                 </h3>
-                <div class="content">
+                <div class="content is-medium">
                     <time datetime="{{.Date}}">{{ .Date | dateFormat "Monday, Jan 2, 2006" }}</time>
                     <div class="tags">
                         {{range .Params.tags}}
