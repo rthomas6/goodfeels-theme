@@ -8,6 +8,7 @@
 //Nice reddish color
 $red: rgb(218, 68, 83)
 $primary: $red
+//$primary: rgb(214, 109, 40)
 
 
 //Separate serif fonts for body text and sans-serif for headings
@@ -24,44 +25,25 @@ figure
     color: $grey-dark !important
 
 article.column
-  max-width: $desktop
+  max-width: $tablet
 
-//Pad content in article column
-=article_padding($padding)
-  article.column
-    .content
-      padding-left: $padding
-      padding-right: $padding
-      padding-bottom: $padding
-    .title                                                
-      padding-top: $padding
-      padding-left: $padding
-      padding-right: $padding
-    .subtitle
-      padding-left: $padding
-      padding-right: $padding
+.hero
+  &.is-bgimg
+    background-image: url('/img/bg-img.svg')
+    background-size: cover
 
-+mobile
-  +article_padding(1rem)
-  .section
-    padding: 1rem 0rem !important
+.box
+  border-radius: 15px !important
 
-+tablet
-  +article_padding(3rem)
-
-+desktop
-  +article_padding(3rem)
-
-+widescreen
-  +article_padding(3rem)
-
-+fullhd
-  +article_padding(3rem)
-
-//$body-line-height: 1.7
+.tag
+  transition: 0.15s
+  &:hover
+    background-color: $grey-darker
+    color: $white-ter
+    text-decoration: none !important
 
 $content-heading-color: $primary
-$body-background-color: $white-ter
+$body-background-color: $white
 
 //Dark navbar
 $navbar-background-color: $grey-darker
@@ -78,9 +60,11 @@ $navbar-dropdown-item-hover-color: $white
 .navbar
   .title
     color: $white-ter
+  &.is-transparent
+    background-color: transparent
 
 ///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
+//Load Bulma. Do not add custom Sass in this section //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
 //@import "node_modules/bulma/bulma"
@@ -93,7 +77,7 @@ $navbar-dropdown-item-hover-color: $white
 //@import "node_modules/bulma/sass/elements/form"
 @import "node_modules/bulma/sass/elements/icon"
 @import "node_modules/bulma/sass/elements/image"
-//@import "node_modules/bulma/sass/elements/notification"
+@import "node_modules/bulma/sass/elements/notification"
 @import "node_modules/bulma/sass/elements/other"
 //@import "node_modules/bulma/sass/elements/progress"
 //@import "node_modules/bulma/sass/elements/table"

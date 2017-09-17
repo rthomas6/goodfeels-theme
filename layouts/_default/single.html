@@ -1,19 +1,21 @@
 {{ define "main" }}
 <section class="section">
         <div class="columns is-desktop is-centered is-gapless">
-            <article class="column box">
-                <h1 class="title">
-                    {{ .Title }}
-                </h1>
-                <h3 class="subtitle">
-                    {{ .Description }}
-                </h3>
-                <div class="content">
-                    <time datetime="{{.Date}}">{{ .Date | dateFormat "Monday, Jan 2, 2006" }}</time>
-                    <div class="tags">
-                        {{range .Params.tags}}
-                        <a class="tag is-primary" href="/tags/{{.}}/">{{ . }}</a>
-                        {{end}}
+            <article class="column">
+                <div class="content" id="top">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="tags">
+                                {{range .Params.tags}}
+                                <a class="tag" href="/tags/{{.}}/">{{ . }}</a>
+                                {{end}}
+                            </div>
+                        </div>
+                        <div class="column">
+                            <p class="has-text-right">
+                                <time datetime="{{.Date}}">{{ .Date | dateFormat "Monday, Jan 2, 2006" }}</time>
+                            </p>
+                        </div>
                     </div>
                     {{ .Content }}
                 </div>

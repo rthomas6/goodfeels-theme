@@ -1,36 +1,50 @@
-<nav class="navbar is-transparent">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="{{ .Site.BaseURL }}">
-                <h1 class="title">{{ .Site.Title }}</h1>
-            </a>
-
-            <div class="navbar-burger burger" data-target="navMenu-main">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
-        <div id="navMenu-main" class="navbar-menu">
-            <div class="navbar-start">
-                {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/{{$taxonomyname | urlize}}">
-                        {{$taxonomyname}}
+<section class="hero is-dark is-medium is-bgimg">
+    <div class="hero-head">
+        <nav class="navbar is-transparent">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="{{ .Site.BaseURL }}">
+                        <h1 class="title">{{ .Site.Title }}</h1>
                     </a>
-                    <div class="navbar-dropdown is-boxed">
-                        {{ range $key, $value := $taxonomy }}
-                        <a class="navbar-item" href="/{{$taxonomyname | urlize }}/{{$key | urlize}}">
-                            {{ $key }} ({{$value.Count}})
-                        </a>
-                        {{ end }}
+
+                    <div class="navbar-burger burger" data-target="navMenu-main">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
-                {{ end }}
+
+                <div id="navMenu-main" class="navbar-menu">
+                    <div class="navbar-start">
+                        {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" href="/{{$taxonomyname | urlize}}">
+                                {{$taxonomyname}}
+                            </a>
+                            <div class="navbar-dropdown is-boxed">
+                                {{ range $key, $value := $taxonomy }}
+                                <a class="navbar-item" href="/{{$taxonomyname | urlize }}/{{$key | urlize}}">
+                                    {{ $key }} ({{$value.Count}})
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                    <div class="navbar-end">
+                    </div>
+                </div>
             </div>
-            <div class="navbar-end">
-            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">
+                {{ .Title }}
+            </h1>
+            <h2 class="subtitle">
+                {{if .IsHome}}{{ .Site.Params.description }}{{else}}{{ .Description }}{{end}}
+            </h2>
         </div>
     </div>
-</nav>
+</section>

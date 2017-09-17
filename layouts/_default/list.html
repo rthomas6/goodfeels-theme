@@ -1,18 +1,4 @@
 {{ define "main" }}
-<section class="hero is-dark is-bold">
-    <div class="hero-head">
-    </div>
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <h1 class="title">
-                {{ .Title }}
-            </h1>
-            <h2 class="subtitle">
-                {{if .IsHome}}{{ .Site.Params.description }}{{else}}{{ .Description }}{{end}}
-            </h2>
-        </div>
-    </div>
-</section>
 <section class="section">
     <div class="columns is-multiline">
     {{ if .IsHome }}
