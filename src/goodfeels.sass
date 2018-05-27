@@ -50,13 +50,16 @@ $navbar-dropdown-background-color: $grey-dark
 $navbar-dropdown-border-top: 1px solid $primary
 $navbar-dropdown-item-hover-background-color: $black-ter
 $navbar-dropdown-item-hover-color: $white
-//$navbar-item-active-background-color:
+$navbar-dropdown-item-active-background-color: $grey-dark
 
 .navbar
   .title
     color: $white-ter
   &.is-transparent
     background-color: transparent
+
+.navbar-menu.is-active
+  background-color: $grey-dark !important
 
 ///////////////////////////////////////////////////////////////////////////////
 //Load Bulma. Do not add custom Sass in this section //////////////////////////
